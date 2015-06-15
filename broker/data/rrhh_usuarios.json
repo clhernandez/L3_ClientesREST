@@ -1,0 +1,30 @@
+{
+	"_id": {
+		"$oid": "556b4f80a87eb76c03851f6d"
+	},
+	"apellido": "asiudhawd",
+	"cargo": "Contador",
+	"departamento": "Finanzas",
+	"email": "asd@asd.cl",
+	"fecha_contratacion": "2015-05-06",
+	"nombre": "adwad",
+	"password": "asd",
+	"rut": "1-8",
+	"sueldo": "123123",
+	"telefono": "9374"
+}
+{
+	"_id": {
+		"$oid": "556be50e055b42901ca1d2bc"
+	},
+	"apellido": "asd",
+	"cargo": "Adm.Recursos Humanos",
+	"departamento": "Rrhh",
+	"email": "asd2@asd.cl",
+	"fecha_contratacion": "0005-06-07",
+	"nombre": "asd",
+	"password": "asd",
+	"rut": "123",
+	"sueldo": "7765",
+	"telefono": "876"
+}
