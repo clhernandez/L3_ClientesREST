@@ -37,7 +37,7 @@ router.get('/trabajadores/:rut', function (req, res){
 	    }else{
 	    	console.log(result);
 	    	if(result==null){
-				result = {error:1, mensaje:'No exiten trabajadores'};
+				result = {error:1, mensaje:'No exite el trabajador'};
 				res.json(result);
 			}else{
 				console.log("Trabajador: "+result);
