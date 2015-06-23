@@ -15,7 +15,7 @@ router.get('/trabajadores/', function (req, res){
 		}else{
 			//al no encontrar mas trabajadores retorna la respuesta.
 			if(trabajadores.length==0){
-				trabajadores.push({error:1, mensaje:'No exiten trabajadores'});
+				trabajadores.push({error:1, mensaje:'No existen trabajadores'});
 			}
 			res.json(trabajadores);
 		}
@@ -31,19 +31,13 @@ router.get('/trabajadores/:rut', function (req, res){
 	var flagfind=false; //bloquear peticion asincrona.
 
 	req.db.usuarios.findOne({rut:rut},function(err, result) {
-		if (err){
-	    	result = err;
-	    	res.json(500, result);
-	    }else{
-	    	console.log(result);
-	    	if(result==null){
-				result = {error:1, mensaje:'No existe el trabajador'};
-				res.json(result);
-			}else{
-				console.log("Trabajador: "+result);
-	    		res.json(result);
-			}
-	    }
+    	if(result==null){
+			result = {error:1, mensaje:'No existe el trabajador'};
+			res.json(result);
+		}else{
+			console.log("Trabajador: "+result);
+    		res.json(result);
+		}
 	});
 });
 
