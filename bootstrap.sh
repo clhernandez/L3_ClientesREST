@@ -3,7 +3,7 @@
 sudo apt-get update
 
 #Install  python
-sudo apt-get install -y python ruby php5-common php5-cli default-jdk
+sudo apt-get install -y python ruby php5-common php5-cli php5-curl default-jdk
 
 #Install C#
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
