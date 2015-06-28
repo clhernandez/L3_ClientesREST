@@ -28,3 +28,18 @@ broker/node_modules/
 
 #vagrant
 .vagrant
+
+#PHONEGAP
+# android
+phonegap/platforms/android/assets/www
+phonegap/platforms/android/bin
+phonegap/platforms/android/gen
+phonegap/platforms/android/local.properties
+phonegap/platforms/android/ant-build
+phonegap/platforms/android/ant-gen
+phonegap/platforms/android/CordovaLib/ant-build
+phonegap/platforms/android/CordovaLib/ant-gen
+phonegap/platforms/android/CordovaLib/bin
+phonegap/platforms/android/CordovaLib/gen
+phonegap/platforms/android/CordovaLib/local.properties
+phonegap/resources/signing

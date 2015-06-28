@@ -3,7 +3,7 @@ import json, sys, requests
 print "Cliente REST - RRHH/Trabajadores"
 if len(sys.argv) > 1:
 	try:
-		url_servicio = "http://192.168.1.35:3001/rrhh/trabajadores"
+		url_servicio = "http://45.55.214.35:3001/rrhh/trabajadores/"
 		
 		print "Consultando url: {0}".format(url_servicio)
 

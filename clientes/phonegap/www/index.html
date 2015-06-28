@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <!-- <meta name="msapplication-tap-highlight" content="no"> -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, widtr=device-widtr">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Cliente RRHH</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="botonera">
+                    <div class="center-block"><h1>Cliente Rest RRHH</h1></div>
+                    <input id="listar_trabajadores" type="button" value="Listar Trabajadores" class="btn btn-block">
+                    <div id="botonera_buscar">
+                        <input id="rut_trabajador" type="text" placeholder="RUT Trabajador" class="form-control">
+                        <input id="btn_buscar" type="text" class="btn btn-block btn-primary" value="Buscar">
+                    </div>
+                    <input id="btn_buscar_botonera" type="button" value="Buscar Trabajador" class="btn btn-block">
+                </div>
+            </div> 
+            <div class="row">
+                <table id="listado_trabajadores" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>rut</th>
+                            <th>nombre</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="alert alert-info"></div>
+            </div>
+        </div>
+        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

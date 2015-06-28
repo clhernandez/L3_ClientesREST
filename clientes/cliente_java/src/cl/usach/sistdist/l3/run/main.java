@@ -45,7 +45,7 @@ public class main {
 	
 	private static void listarTrabajadores(){
 		try {
-			URL url = new URL("http://localhost:3001/rrhh/trabajadores");
+			URL url = new URL("http://45.55.214.35:3001/rrhh/trabajadores/");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
@@ -89,7 +89,7 @@ public class main {
 			//^(\d+)-([0-9]|k|K) expresion regular para validar rut (formato 11111111-1)
 			
 			
-			URL url = new URL("http://localhost:3001/rrhh/trabajadores/"+rut);
+			URL url = new URL("http://45.55.214.35:3001/rrhh/trabajadores/"+rut);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");

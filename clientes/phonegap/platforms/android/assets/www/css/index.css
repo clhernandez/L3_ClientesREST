@@ -1,0 +1,12 @@
+#botonera{
+    margin:0 2%;
+}
+#botonera h1{
+    text-align: center;
+}
+#botonera input{
+    margin-bottom: 5px;
+}
+#botonera_buscar, .alert, #listado_trabajadores{
+    display: none;
+}
