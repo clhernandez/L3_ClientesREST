@@ -3,12 +3,14 @@ var request = require('request');
 var router = express.Router();
 
 router.get('/trabajadores/', function (req, res){
+	res.setHeader("Access-Control-Allow-Origin", "*");
+
 	console.log("Listar Trabajadores");
 	var trabajadores = [];
 	var flagfind=false; //bloquear peticion asincrona.
-
-	var result = req.db.usuarios.find({});//buscar todos los trabajadores
-	result.each(function(err, trabajador) {
+	
+	
+	req.db.usuarios.find({}).each(function(err, trabajador) {
 		if(trabajador!=null){
 			//Agregar los trabajadores obtenidos a un array
 			trabajadores.push(trabajador);
@@ -23,21 +25,28 @@ router.get('/trabajadores/', function (req, res){
 });
 
 router.get('/trabajadores/:rut', function (req, res){
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	
 	console.log("Get Trabajador by Rut");
 	var rut = req.params.rut;
-	console.log(rut);
+	console.log(rut);	
 
 	var trabajadores = [];
 	var flagfind=false; //bloquear peticion asincrona.
 
 	req.db.usuarios.findOne({rut:rut},function(err, result) {
-    	if(result==null){
-			result = {error:1, mensaje:'No existe el trabajador'};
-			res.json(result);
-		}else{
-			console.log("Trabajador: "+result);
-    		res.json(result);
-		}
+		if (err){
+	    	result = err;
+	    	res.json(500, result);
+	    }else{
+	    	if(result==null){
+				result = {error:1, mensaje:'No existe trabajador'};
+				res.json(result);
+			}else{
+				console.log("Trabajador: "+result);
+	    		res.json(result);
+			}
+	    }
 	});
 });
 
