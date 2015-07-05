@@ -13,7 +13,7 @@ def listarTrabajadores():
 
 			for trabajador in trabajadores:
 				print "-------------------------------------------------------"
-				print "RUT: {0}, Nombre: {0}, Apellido:{1}".format(trabajador["rut"], trabajador["nombre"], trabajador["apellido"])
+				printTrabajador(trabajador)
 
 	except requests.exceptions.ConnectionError:
 		print "Error al conectarse con el servicio"
@@ -26,10 +26,21 @@ def buscarTrabajador(rut):
 		if r2.status_code==200:
 			trabajador_rut = r2.json()
 			print "-------------------------------------------------------"
-			print "RUT: {0}, Nombre: {0}, Apellido:{1}".format(trabajador_rut["rut"], trabajador_rut["nombre"], trabajador_rut["apellido"])
+			if(trabajador_rut["mensaje"]==None):
+				printTrabajador(trabajador_rut)
+			else:
+				print trabajador_rut["mensaje"]
 
 	except requests.exceptions.ConnectionError:
 		print "Error al conectarse con el servicio"
+def printTrabajador(trabajador):
+
+	print "NOMBRE: " + trabajador["nombre"] + " " + trabajador["apellido"]
+	print "RUT: " + trabajador["rut"]
+	print "CARGO: " + trabajador["cargo"]
+	print "DEPARTAMENTO: "   + trabajador["departamento"]
+	print "EMAIL: " + trabajador["email"]
+
 
 def main():
 	fin = False

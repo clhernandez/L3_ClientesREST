@@ -105,10 +105,12 @@ func buscarTrabajador(url string, rut string){
 	   		if err != nil{
 	   			fmt.Printf("%s", err)
 	   		}else{
-	   			fmt.Println("RUT: " + trabajador.Rut)
-	   			fmt.Println("Nombre: " + trabajador.Nombre)
-   				fmt.Println("Apellido: " + trabajador.Apellido)
-   				fmt.Println("Email: " + trabajador.Email)
+	   			if(trabajador.Nombre != ""){
+   				printTranajador(trabajador)
+   				}else{
+   					fmt.Println("No existe el trabajador")
+   				}
+	   			
    				fmt.Println("-------------------------------------------------------")
 	   		}
 	    }
@@ -138,13 +140,18 @@ func listarTrabajadores(url string){
 	   			fmt.Printf("%s", err)
 	   		}else{
 	   			for i := 0; i < len(trabajadores); i++ {
-	   				fmt.Println("RUT: " + trabajadores[i].Rut)
-	   				fmt.Println("Nombre: " + trabajadores[i].Nombre)
-	   				fmt.Println("Apellido: " + trabajadores[i].Apellido)
-	   				fmt.Println("Email: " + trabajadores[i].Email)
+	   				printTranajador(trabajadores[i])
 	   				fmt.Println("-------------------------------------------------------")
 	   			}
 	   		}
 	    }
 	}
+}
+
+func printTranajador(trabajador Trabajador){
+	fmt.Println("Nombre: " + trabajador.Nombre + " " + trabajador.Apellido)
+	fmt.Println("RUT: " + trabajador.Rut)
+	fmt.Println("Cargo: " + trabajador.Cargo)
+	fmt.Println("Departamento: " + trabajador.Departamento)
+	fmt.Println("Email: " + trabajador.Email)
 }

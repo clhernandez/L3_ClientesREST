@@ -76,7 +76,7 @@
 
 function printTrabajador($trabajador){
 	echo "---------------------------------------------------". PHP_EOL;
-	echo "NOMBRE: ", $trabajador->nombre, PHP_EOL;
+	echo "NOMBRE: ", $trabajador->nombre . " " . $trabajador->apellido, PHP_EOL;
 	echo "RUT: ", $trabajador->rut, PHP_EOL;
 	echo "CARGO: ", $trabajador->cargo, PHP_EOL;
 	echo "DEPARTAMENTO: ", $trabajador->departamento, PHP_EOL;

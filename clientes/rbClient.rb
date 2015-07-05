@@ -31,7 +31,7 @@ def buscarTrabajador(rut)
 end
 
 def printTrabajador(trabajador)
-	puts "NOMBRE: " + trabajador["nombre"]
+	puts "NOMBRE: " + trabajador["nombre"] + " " + trabajador["apellido"]
 	puts "RUT: " + trabajador["rut"]
 	puts "CARGO: " + trabajador["cargo"]
 	puts "DEPARTAMENTO: "   + trabajador["departamento"]
