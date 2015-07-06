@@ -3,7 +3,7 @@ require 'json'
 
 def listarTrabajadores()
 	#Consumo de URL GET
-	resp = JSON.parse( RestClient.get $url + "/rrhh/trabajadores" , {:accept =>:json} )
+	resp = JSON.parse( RestClient.get $url + "rrhh/trabajadores" , {:accept =>:json} )
 	#Recorrer todas los trabajdores
 	resp.each do |json|
 		puts "-------------------------------------------------------"
@@ -18,7 +18,7 @@ def listarTrabajadores()
 end
 
 def buscarTrabajador(rut)
-	resp = JSON.parse( RestClient.get $url + "/rrhh/trabajadores/"+rut, {:accept => :json} )
+	resp = JSON.parse( RestClient.get $url + "rrhh/trabajadores/"+rut, {:accept => :json} )
 	#Validar que exista el trabajador
 	if resp["error"] == nil
 		puts "-------------------------------------------------------"
