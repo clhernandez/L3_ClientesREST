@@ -2,7 +2,7 @@
 
 sudo apt-get update
 
-#Install  python
+#Install  python, ruby, php5, java
 sudo apt-get install -y python ruby php5-common php5-cli php5-curl default-jdk
 
 #Install C#

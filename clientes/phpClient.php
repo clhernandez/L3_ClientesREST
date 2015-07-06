@@ -1,4 +1,3 @@
-
 <?php
 	include("httpful.phar");
 	// Create the handler
@@ -14,7 +13,7 @@
 		//leer archivo de configuracion del servidor
 		$val = file_get_contents($server);
 		$servidor = json_decode($val, true);
-		$url = $servidor["url"] . "/rrhh/trabajadores";
+		$url = $servidor["url"] . "rrhh/trabajadores";
 
 		$fin=false;
 	}else{
@@ -59,7 +58,7 @@
 					$array = json_decode($response);
 					ECHO "<<BUSCAR TRABAJADOR RUT: ".$rut.">>". PHP_EOL;
 					//si existe el trabajador se imprime; caso contrario, mensaje de error
-					if ($array->error==null) {
+					if (array_key_exists('error', $array)==false) {
 						printTrabajador($array);
 					}else{
 						echo "NO EXISTE EL TRABAJADOR".PHP_EOL;
