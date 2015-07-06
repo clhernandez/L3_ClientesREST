@@ -26,7 +26,7 @@ def buscarTrabajador(rut):
 		if r2.status_code==200:
 			trabajador_rut = r2.json()
 			print "-------------------------------------------------------"
-			if(trabajador_rut["mensaje"]==None):
+			if( "mensaje" not in trabajador_rut ):
 				printTrabajador(trabajador_rut)
 			else:
 				print trabajador_rut["mensaje"]
